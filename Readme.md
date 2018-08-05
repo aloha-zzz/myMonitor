@@ -1,8 +1,9 @@
-record frontEnd Info
+# myMonitor
 
 - record time
-- record Error
-
-    - using requestIdleCallback to async sendInfo
-    - using LruCache to store user action
-    - using localStorage to save Info
+    - use performance Timing API
+- record Error with ErrorInfo & mutationObserver
+    - using localStorage to store
+    - using requestIdleCallback to optimization
+    - using Lru to store mutationInfo
+    - Provide fetch & img.src to sendInfo 

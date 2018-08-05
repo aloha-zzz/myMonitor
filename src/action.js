@@ -15,7 +15,7 @@ export function actionInit() {
     //     Info.push('clickInfo:' + JSON.stringify(data))
     //     // console.log(Info)
     // }, true)
-    let observer = new MutationObserver(function(mutations) {
+    let observer = new MutationObserver(function (mutations) {
         let mutionInfo = 'observerInfo: '
         mutations.forEach(item => {
             let infoObj = item.target;
@@ -28,11 +28,9 @@ export function actionInit() {
         Lru.get(mutionInfo);
     });
     observer.observe(document, {
-        subtree: true, 
-        childList: true 
+        subtree: true,
+        childList: true
     });
-
-    
 }
 
 
@@ -58,7 +56,7 @@ class LruCache {
             if (this.size === this.limit) { // 达到限制
                 this.deleteLast();
                 this.insertFromHead(val)
-               
+
             } else if (this.size === 0) {
                 this.head = this.tail = this.map[val] = new Node(val);
                 this.size++;
