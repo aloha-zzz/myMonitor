@@ -10,11 +10,12 @@ export function recordInit() {
                 'onload': t.loadEventEnd - t.navigationStart
             }
             
-            for(let i of info) {
-                if (i < 0) {
-                    recordInit();
-                    return;
-                }
+            let bool = Object.values(info).some ((item) => {
+                return item < 0 
+            })
+            if(bool) {
+                recordInit();
+                return;
             }
             collectInfo('record', JSON.stringify(info)) 
         })

@@ -1,3 +1,5 @@
+import sendType from './conf'
+
 export default function collectInfo(type, info) {
     let content = localStorage.getItem(type);
     if (content) {
@@ -10,20 +12,19 @@ export default function collectInfo(type, info) {
         content = encodeURIComponent(info)
     }
     localStorage.setItem(type, content);
-
     const data = content.split('/')
-
-    // sendInfo(type, data);
-    // ImageSendInfo(type, data);
+    requestIdleCallback(() => {
+        sendType ? sendInfo(type, data) : ImageSendInfo(type, data);
+    })
 }
 
-function sendInfo(type, data) {   
+function sendInfo(type, data) {
     fetch({
         method: 'post',
         url: `monitor/${type}`,
         data
     }).then(() => {
-      clearInfo(type)  
+        clearInfo(type)
     })
 }
 
@@ -33,6 +34,7 @@ function clearInfo(type) {
 
 
 function ImageSendInfo(type, data) {
+
     let image = new Image();
     let query = data.join('/');
     image.src = `host?type=${type}&data=${query}`;

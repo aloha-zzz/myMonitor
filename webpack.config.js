@@ -2,7 +2,7 @@ const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
-    entry: "./index.js",
+    entry: "./src/index.js",
     output: {
         filename: "./bundle.js",
         path: __dirname + "/dist",
