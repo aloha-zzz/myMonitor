@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="position: absolute;" id='test'> asdasds</div>
+    <button id='asd'>asd</button>
+</body>
+    <script src='dist/bundle.js'></script>
+    <script>
+        document.getElementById('test').onclick = function(){
+            this.style.top  = '50px';
+            document.getElementById('test').setAttribute('a','b')
+            throw new Error('asd')
+        }
+    </script>
+    
+</html>
