@@ -3,6 +3,6 @@ record frontEnd Info
 - record time
 - record Error
 
-    - using requestIdleCallback 
-    - using LruCache 
+    - using requestIdleCallback to async sendInfo
+    - using LruCache to store user action
     - using localStorage to save Info
