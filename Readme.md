@@ -7,3 +7,6 @@
     - using requestIdleCallback to optimization
     - using Lru to store mutationInfo
     - Provide fetch & img.src to sendInfo 
+    - catch Promise reject
+- record resource error
+    - need backend

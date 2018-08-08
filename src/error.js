@@ -29,9 +29,21 @@ export default function init() {
             errorDetail: errorObj
         }
         console.log('onerror emit');
+        console.log(Error)
         collectInfo('errorInfo', JSON.stringify(Error) + Lru.getHeadVal());
         return true; // 控制台不显示错误
     }
+
+    // window.addEventListener('error', function(error) {
+    //     let Error = {
+    //         errorInfo: error.message,
+    //         errorFile: error.filename,
+    //         errorLine: error.lineno,
+    //         errorCol: error.colno,
+    //         errorDetail: error.error
+    //     }
+    //     console.log(Error)
+    // }, true)
 }
 
 
